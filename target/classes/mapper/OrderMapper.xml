@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxl.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.xxl.model.Order">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="productId" property="productId" jdbcType="INTEGER"/>
+        <result column="amount" property="amount" jdbcType="INTEGER"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.xxl.model.Order">
+        insert into sec_order (productId , amount)
+        values (#{productId,jdbcType=INTEGER}, #{amount,jdbcType=INTEGER})
+     </insert>
+
+</mapper>
